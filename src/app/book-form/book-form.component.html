@@ -1,0 +1,16 @@
+<div>
+  <div class="form-floating mb-3">
+    <input type="hidden" [(ngModel)]="id">
+    <input id="nameBook" class="form-control" type="text" placeholder="Name book..." [(ngModel)]="name">
+    <label for="nameBook">Book name</label>
+    <select class="form-select" [(ngModel)]="author">
+<!--      <option selected>{{author.firstName}} {{author.lastName}}</option>-->
+      <option *ngFor="let a of authors"  [ngValue]="a">{{a.firstName}} {{a.lastName}}</option>
+    </select>
+    <select class="form-select" [(ngModel)]="genre">
+<!--      <option selected>{{genre.genre}}</option>-->
+      <option *ngFor="let g of genres" [ngValue]="g">{{g.genre}}</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" (click)="addBook()">Save book</button>
+</div>
