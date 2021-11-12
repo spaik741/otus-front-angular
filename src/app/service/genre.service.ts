@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {Author} from "../models/Author";
 import {Genre} from "../models/Genre";
 
-const GENRE_API = 'api/genre/';
+const GENRE_API = 'api/genres';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,6 @@ export class GenreService {
   }
 
   getAllGenre(): Observable<Genre> {
-    return this.http.get<Genre>(GENRE_API + 'all');
+    return this.http.get<Genre>(GENRE_API);
   }
 }

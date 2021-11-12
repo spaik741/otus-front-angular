@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {Book} from "../models/Book";
 import {Author} from "../models/Author";
 
-const AUTHOR_API = 'api/author/';
+const AUTHOR_API = 'api/authors';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class AuthorService {
   }
 
   getAllAuthor(): Observable<Author> {
-    return this.http.get<Author>(AUTHOR_API + 'all');
+    return this.http.get<Author>(AUTHOR_API);
   }
 
 

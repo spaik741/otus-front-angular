@@ -38,7 +38,6 @@ export class BookViewComponent implements OnInit {
         if (p.id) {
           // @ts-ignore
           this.commentService.getAllComment(p.id).subscribe(c => this.comments = c);
-          // console.log('ID: ', p.id)
         }
       }
     );

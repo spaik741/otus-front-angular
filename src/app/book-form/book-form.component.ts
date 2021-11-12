@@ -5,7 +5,7 @@ import {AuthorService} from "../service/author.service";
 import {GenreService} from "../service/genre.service";
 import {Book} from "../models/Book";
 import {BookService} from "../service/book.service";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 
 @Component({
   selector: 'app-book-form',
@@ -20,6 +20,8 @@ export class BookFormComponent implements OnInit {
   author: Author;
   genre: Genre;
 
+  message: string = '';
+
   authors: Author [];
   genres: Genre [];
 
@@ -30,6 +32,7 @@ export class BookFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.message = '';
     // @ts-ignore
     this.authorService.getAllAuthor().subscribe(authors => this.authors = authors);
     // @ts-ignore
@@ -56,8 +59,15 @@ export class BookFormComponent implements OnInit {
         author: this.author,
         genre: this.genre
       }
-      this.bookService.createBook(book).subscribe();
+      this.bookService.createBook(book).subscribe(m => {
+        if (m.id) {
+          console.log('ID: ',m.id)
+          this.message = 'Great! You book save!'
+        }
+      });
       console.log('Add new book:', book);
+
+      // this.router.navigate( ['']);
     }
   }
 }
