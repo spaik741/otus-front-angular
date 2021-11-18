@@ -27,7 +27,7 @@ export class BookService {
     return this.http.post(BOOK_API, book);
   }
 
-  deleteBook(id: number) {
+  deleteBook(id: any) {
     console.log('Delete book id:', id, BOOK_API + id);
     return this.http.delete(BOOK_API + '/' + id);
   }

@@ -3,7 +3,7 @@ import {Genre} from "./Genre";
 
 
 export interface Book {
-  id?: bigint
+  id?: any
   name: string
   author: Author
   genre: Genre

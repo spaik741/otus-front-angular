@@ -1,7 +1,7 @@
 import {Book} from "./Book";
 
 export interface Comment {
-  id?: bigint
+  id?: any
   message: string
   messageDate: Date
   book: Book

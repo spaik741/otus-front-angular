@@ -30,6 +30,7 @@ export class BooksComponent implements OnInit {
   deleteBook(id: any) {
     this.bookService.deleteBook(id).subscribe();
     this.getAllBooks();
+    window.location.reload();
   }
 
   editBook(id: any) {

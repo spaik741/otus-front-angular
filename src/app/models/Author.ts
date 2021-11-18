@@ -1,5 +1,5 @@
 export interface Author {
-  id?: bigint
+  id?: any
   firstName: string
   lastName: string
 }
