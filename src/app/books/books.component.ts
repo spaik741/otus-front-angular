@@ -18,6 +18,10 @@ export class BooksComponent implements OnInit {
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getAllBooks();
+  }
+
+  getAllBooks(): void {
     // @ts-ignore
     this.bookService.getAllBook().subscribe(books => this.books = books);
   }
@@ -25,7 +29,7 @@ export class BooksComponent implements OnInit {
 
   deleteBook(id: any) {
     this.bookService.deleteBook(id).subscribe();
-    window.location.reload();
+    this.getAllBooks();
   }
 
   editBook(id: any) {
