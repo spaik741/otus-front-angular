@@ -1,0 +1,42 @@
+
+<h1 class="h1">This is all books!</h1>
+<!--<ul>-->
+<!--  <li *ngFor="let book of books">-->
+<!--    <p>{{book.id}}</p>-->
+<!--    <p>{{book.name}}</p>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Genre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books">
+      <td >
+        {{book.id}}
+      </td>
+      <td >
+        {{book.name}}
+      </td>
+      <td >
+        {{book.author.firstName}} {{book.author.lastName}}
+      </td>
+      <td >
+        {{book.genre.genre}}
+      </td>
+      <td>
+        <button type="button" class="btn btn-info" (click)="viewBook(book.id)">&#x27A5;</button>
+        <button type="button" class="btn btn-warning" (click)="editBook(book.id)" >&#9998;</button>
+        <button type="button" class="btn btn-danger" (click)="deleteBook(book.id)">&#10006;</button>
+      </td>
+    </tr>
+    </tbody>
+</table>
+
+
