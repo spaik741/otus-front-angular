@@ -26,7 +26,7 @@ import { BookViewComponent } from './book-view/book-view.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
