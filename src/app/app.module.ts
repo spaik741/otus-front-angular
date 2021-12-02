@@ -9,6 +9,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { BooksComponent } from './books/books.component';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookViewComponent } from './book-view/book-view.component';
+import {authInterceptorProviders} from "./service/auth-interceptor.service";
+import {AuthComponent} from "./auth/auth.component";
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { BookViewComponent } from './book-view/book-view.component';
     AppComponent,
     BooksComponent,
     BookFormComponent,
-    BookViewComponent
+    BookViewComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

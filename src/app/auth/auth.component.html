@@ -1,0 +1,16 @@
+
+  <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Open_book_nae_02.svg/1200px-Open_book_nae_02.svg.png" alt="" width="72" height="57">
+  <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+  <div class="form-floating">
+    <input type="text" class="form-control" id="usernameUser" [(ngModel)]="username">
+    <label for="usernameUser">Login</label>
+  </div>
+  <div class="form-floating">
+    <input type="password" class="form-control" id="passwordUser" [(ngModel)]="password">
+    <label for="passwordUser">Password</label>
+  </div>
+
+  <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="loginExecute()">Sign in</button>
+  <p class="mt-5 mb-3 text-muted">© 2021</p>
+

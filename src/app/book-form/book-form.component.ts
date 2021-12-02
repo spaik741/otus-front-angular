@@ -14,7 +14,6 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 })
 export class BookFormComponent implements OnInit {
 
-  // @Output() onAdd: EventEmitter<Book> = new EventEmitter<Book>();
   id: any
   name: string;
   author: Author;
