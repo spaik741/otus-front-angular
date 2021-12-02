@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {TokenStorageService} from "./service/token-storage.service";
 import {Router} from "@angular/router";
 
@@ -10,5 +10,15 @@ import {Router} from "@angular/router";
 export class AppComponent {
   title = 'otus-front-angular';
 
+  constructor(private router: Router,
+              private tokenStorageService: TokenStorageService) {
+  }
 
+  authenticationRout() {
+    this.router.navigate(['auth']);
+  }
+
+  logout() {
+    this.tokenStorageService.logOut();
+  }
 }

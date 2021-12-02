@@ -24,6 +24,8 @@ export class AuthComponent implements OnInit {
     });
   }
 
-
+  isSuccess() : boolean{
+    return !!this.tokenStorageService.getToken();
+  }
 
 }
